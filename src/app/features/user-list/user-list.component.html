@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+      <h3>{{labels.SCREEN_TITLE}}</h3>
+    </div>
+  </div>
+
+  <hr />
+  
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <span>{{labels.SCREEN_SUBTITLE}}</span>
+    </div>
+  </div>
+  
+  <br />
+  
+  <div class="row">
+    <div class="col-md-12">
+      
+      <div class="users__list">
+        <div class="users__list__table">
+          <table mat-table [dataSource]="userListFacade.dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="code">
+              <th mat-header-cell *matHeaderCellDef>{{labels.TABLE_COLUMN_CODE}}</th>
+              <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="fullName">
+              <th mat-header-cell *matHeaderCellDef>{{labels.TABLE_COLUMN_NAME}}</th>
+              <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="contact">
+              <th mat-header-cell *matHeaderCellDef>{{labels.TABLE_COLUMN_EMAIL}}</th>
+              <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="userListFacade.displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: userListFacade.displayedColumns;"></tr>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
