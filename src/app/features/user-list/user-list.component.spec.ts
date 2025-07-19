@@ -1,23 +1,31 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { UserListComponent } from './user-list.component';
+import { UserListFacade } from './facades/user-list.facade';
 
 describe('UserListComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  let component: UserListComponent;
+  const userListFacadeStub = jasmine.createSpyObj('UserListFacade', ['initUserList']);
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
       declarations: [
         UserListComponent
       ],
+      providers: [
+        UserListComponent,
+        { provide: UserListFacade, useValue: userListFacadeStub }
+      ],
     }).compileComponents();
+
+    component = TestBed.inject(UserListComponent)
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(UserListComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should be create', () => {
+    expect(component).toBeTruthy();
   });
 
 });

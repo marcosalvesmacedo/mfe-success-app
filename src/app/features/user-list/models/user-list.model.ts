@@ -1,8 +1,7 @@
 export interface UserListResponse {
     id: number;
     name: string;
-    email: string;
-    userName: string;
+    email: string
 }
 
 export interface UserListAdaptedResponse {
