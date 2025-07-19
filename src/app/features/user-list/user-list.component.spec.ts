@@ -28,4 +28,8 @@ describe('UserListComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should call ngOnInit', () => {
+    component.ngOnInit();
+  });
+
 });

@@ -1,5 +1,6 @@
 export const USERLIST_URLS = {
-    LIST_USER: `/api/get-users`
+    LIST_USER: `/api/get-users`,
+    DELETE_USER: `/api/delete-user/`
 }
 
 export const USER_LIST_MESSAGES = {
@@ -9,4 +10,5 @@ export const USER_LIST_MESSAGES = {
     TABLE_COLUMN_CODE: 'Código',
     TABLE_COLUMN_NAME: 'Nome Completo',
     TABLE_COLUMN_EMAIL: 'Contato',
+    SNAKBAR_MESSAGE_DELETE: `o usuário foi deletado com sucesso!`
 }

@@ -1,21 +1,30 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { UserListAdapter } from './adapters/user-list.adapter';
+import { UserListFacade } from './facades/user-list.facade';
+import { UserListService } from './services/user-list.service';
+import { UserListStore } from './stores/user-list.store';
 import { UserListRoutingModule } from './user-list-routing.module';
 import { UserListComponent } from './user-list.component';
-import { UserListFacade } from './facades/user-list.facade';
-import { UserListAdapter } from './adapters/user-list.adapter';
-import { UserListService } from './services/user-list.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { UserListStore } from './stores/user-list.store';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     UserListComponent,
   ],
   imports: [
+    CommonModule,
+    HttpClientModule,
     UserListRoutingModule,
     MatTableModule,
-    HttpClientModule
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [
     UserListFacade,

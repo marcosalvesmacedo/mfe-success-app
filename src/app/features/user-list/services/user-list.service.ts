@@ -23,4 +23,8 @@ export class UserListService {
     );
   }
 
+  public deleteUser(id: number): Observable<Object> {
+    return this.http.delete(`${USERLIST_URLS.DELETE_USER}${id}`);
+  }
+
 }

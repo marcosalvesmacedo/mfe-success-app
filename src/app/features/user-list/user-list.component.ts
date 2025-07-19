@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UserListFacade } from './facades/user-list.facade';
 import { USER_LIST_MESSAGES } from './constants/commons.constants';
+import { UserListFacade } from './facades/user-list.facade';
 
 @Component({
   selector: 'app-user-list',
@@ -12,7 +12,10 @@ export class UserListComponent {
 
   constructor(
     public userListFacade: UserListFacade
-  ) {
-    this.userListFacade.initUserList();
+  ) {}
+
+  public ngOnInit(): void {
+     this.userListFacade.initUserList();
   }
+
 }

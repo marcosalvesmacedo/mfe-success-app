@@ -56,4 +56,16 @@ describe('UserListService', () => {
 
   });
 
+  it('should call deleteUser', () => {
+    const mockUserId = 1;
+    service.deleteUser(mockUserId).subscribe(result => {
+      expect(result).toEqual({});
+    });
+
+    const req = httpMock.expectOne(`${USERLIST_URLS.DELETE_USER}${mockUserId}`);
+    expect(req.request.method).toBe('DELETE');
+    req.flush({});
+
+  });
+
 });

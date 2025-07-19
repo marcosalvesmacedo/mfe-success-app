@@ -5,13 +5,48 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: auto;
-
     &__table {
         margin-top: 20px;
         padding: 30px;
-        max-width: 1000px;
+        width: 100%;
+        @media screen and (max-width: 1365px) { 
+            max-width: 100%;
+            padding: 10px;
+        };
         border: solid 1px $grey;
         border-radius: 20px;
+
+        &__item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__button {
+                position: relative;
+                right: 0;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 1366px) {
+    .desktop__version {
+        display: flexbox;
+    }
+
+    .mobile__version {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1365px) {
+    .desktop__version {
+        display: none;
+    }
+    
+    .mobile__version {
+        display: block;
     }
 }
